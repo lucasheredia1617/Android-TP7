@@ -1,10 +1,12 @@
 package com.example.android_tp7.presentation.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.example.android_tp7.R
+import com.example.android_tp7.databinding.ActivityMainBinding
+import com.example.android_tp7.domain.util.fragment.ErrorDialogFragment
 import org.koin.core.component.KoinComponent
 
 class MainActivity : AppCompatActivity(), KoinComponent {
@@ -25,10 +27,11 @@ class MainActivity : AppCompatActivity(), KoinComponent {
             finish()
         }
 
-        binding.errorDialogButton.setOnClickListener{
-            ErrorDialogFragment.newInstance(getString(R.string.error_dialog_title),
-                getString(R.string.message_error_dialog)).show(supportFragmentManager,"errorDialog")
-
+        binding.errorDialogButton.setOnClickListener {
+            ErrorDialogFragment.newInstance(
+                getString(R.string.error_dialog_title),
+                getString(R.string.message_error_dialog),
+            ).show(supportFragmentManager, "errorDialog")
         }
     }
 }

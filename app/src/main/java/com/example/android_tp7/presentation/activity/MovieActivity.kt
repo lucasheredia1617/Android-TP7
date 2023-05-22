@@ -5,6 +5,9 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.android_tp7.databinding.ActivityMainBinding
+import com.example.android_tp7.presentation.adapter.MovieAdapter
+import com.example.android_tp7.presentation.mvvm.viewmodel.MoviesViewModel
 import org.koin.android.ext.android.inject
 import org.koin.core.component.KoinComponent
 
@@ -33,7 +36,6 @@ class MovieActivity : AppCompatActivity(), KoinComponent {
             MoviesViewModel.MainStatus.SHOW_INFO -> {
                 binding.recycler.layoutManager = LinearLayoutManager(this)
                 binding.recycler.adapter = MovieAdapter(data.movies)
-
             }
             MoviesViewModel.MainStatus.ERROR -> {
                 binding.emptyState.visibility = View.VISIBLE

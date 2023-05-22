@@ -1,6 +1,7 @@
 package com.example.android_tp7.di
 
 import androidx.room.Room
+import com.example.android_tp7.database.MovieRoomDataBase
 import org.koin.dsl.module
 
 object DBModule {

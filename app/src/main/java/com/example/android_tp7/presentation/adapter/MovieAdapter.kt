@@ -5,6 +5,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.android_tp7.R
+import com.example.android_tp7.databinding.ItemRecyclerBinding
+import com.example.android_tp7.domain.entity.Movie
 
 class MovieAdapter(private val movies: List<Movie>) : RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
 
@@ -27,8 +30,10 @@ class MovieAdapter(private val movies: List<Movie>) : RecyclerView.Adapter<Movie
             binding.releaseDate.text = itemView.context.getString(R.string.card_release, movie.releaseDate)
 
             Glide.with(itemView.context)
-                .load("https://image.tmdb.org/t/p/w500" +
-                        movie.posterPath)
+                .load(
+                    "https://image.tmdb.org/t/p/w500" +
+                        movie.posterPath,
+                )
                 .into(binding.image)
         }
     }

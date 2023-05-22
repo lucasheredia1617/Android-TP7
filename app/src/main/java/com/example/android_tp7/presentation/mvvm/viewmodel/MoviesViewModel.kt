@@ -4,6 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.android_tp7.domain.entity.Movie
+import com.example.android_tp7.domain.util.CoroutineResult
+import com.example.android_tp7.presentation.mvvm.model.MoviesModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

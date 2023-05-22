@@ -5,18 +5,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
+import com.example.android_tp7.databinding.FragmentCustomDialogBinding
 
 class ErrorDialogFragment : DialogFragment() {
 
     private var alertTitle: String? = null
     private var alertMessage: String? = null
 
-    private lateinit var binding:FragmentCustomDialogBinding
+    private lateinit var binding: FragmentCustomDialogBinding
     companion object {
         private const val ARG_TITLE = "title"
         private const val ARG_MESSAGE = "message"
 
-        fun newInstance(title : String? = null, message: String? = null) : ErrorDialogFragment {
+        fun newInstance(title: String? = null, message: String? = null): ErrorDialogFragment {
             val fragment = ErrorDialogFragment()
             val args = Bundle()
             args.putString(ARG_TITLE, title)
@@ -29,7 +30,6 @@ class ErrorDialogFragment : DialogFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = FragmentCustomDialogBinding.inflate(layoutInflater)
-
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -46,5 +46,4 @@ class ErrorDialogFragment : DialogFragment() {
         binding.headerDialogFragment.text = alertTitle
         binding.dialogFragmentMessage.text = alertMessage
     }
-
 }

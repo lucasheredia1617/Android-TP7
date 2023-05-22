@@ -1,6 +1,10 @@
 package com.example.android_tp7.data.service.utils
 
-fun ResultResponse.transformToList():List<Movie>{
+import com.example.android_tp7.data.entity.MovieEntity
+import com.example.android_tp7.data.service.response.ResultResponse
+import com.example.android_tp7.domain.entity.Movie
+
+fun ResultResponse.transformToList(): List<Movie> {
     val movieList = mutableListOf<Movie>()
     movies.forEach {
         movieList.add(
@@ -11,8 +15,8 @@ fun ResultResponse.transformToList():List<Movie>{
                 it.releaseDate,
                 it.originalLanguage,
                 it.voteAverage,
-                it.voteCount
-            )
+                it.voteCount,
+            ),
         )
     }
     return movieList
@@ -25,7 +29,7 @@ fun MovieEntity.toMovie() = Movie(
     this.releaseDate,
     this.originalLanguage,
     this.voteAverage,
-    this.voteCount
+    this.voteCount,
 )
 
 fun Movie.toMovieDB() = MovieEntity(
@@ -35,7 +39,7 @@ fun Movie.toMovieDB() = MovieEntity(
     this.releaseDate,
     this.originalLanguage,
     this.voteAverage,
-    this.voteCount
+    this.voteCount,
 )
 
 fun List<MovieEntity>.toMovieList() = this.map { it.toMovie() }
